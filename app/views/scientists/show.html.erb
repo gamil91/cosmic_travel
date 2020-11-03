@@ -1,0 +1,15 @@
+<h1>Scientist Information</h1>
+
+Name : <%=@scientist.name%><br/>
+Field of Study : <%=@scientist.field_of_study%><br/>
+<ul>
+<strong> Planets Visited </strong> <%@scientist.planets.each do |planet|%>
+<li><%=planet.name%> - <%=planet.distance_from_earth%></li>
+<%end%>
+<br/><br/>
+<strong> Missions </strong> <%@scientist.missions.each do |mission|%>
+<li><%=mission.name%></li>
+<%end%>
+</ul>
+<br/><br/>
+<%=button_to "Delete this scientist", @scientist, method: :delete%>
